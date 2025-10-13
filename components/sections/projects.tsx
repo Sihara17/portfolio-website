@@ -7,7 +7,7 @@ const projects = [
     result: "Result: 30% error reduction.",
   },
   {
-    title: "Company Portfolio Website",
+    title: "Ridwan Sihara Portfolio",
     summary: "Responsive site (React + Node.js + MySQL).",
     result: "Result: 45% engagement increase.",
   },
