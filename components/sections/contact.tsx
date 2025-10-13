@@ -28,18 +28,6 @@ export function Contact() {
                 github.com/Sihara17
               </a>
             </dd>
-            <dt className="col-span-1 text-muted-foreground">LinkedIn</dt>
-            <dd className="col-span-2">
-              <a
-                className="underline underline-offset-4"
-                href="-"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                linkedin.com (add your profile)
-              </a>
-            </dd>
-          </dl>
           <div className="mt-4 flex gap-3">
             <Button asChild className="bg-primary text-primary-foreground">
               <a href="mailto:sihararidwansihara@gmail.com">Email Ridwan Sihara</a>
