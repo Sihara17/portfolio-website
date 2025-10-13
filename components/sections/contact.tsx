@@ -32,7 +32,7 @@ export function Contact() {
             <dd className="col-span-2">
               <a
                 className="underline underline-offset-4"
-                href="https://www.linkedin.com"
+                href="-"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -42,7 +42,7 @@ export function Contact() {
           </dl>
           <div className="mt-4 flex gap-3">
             <Button asChild className="bg-primary text-primary-foreground">
-              <a href="mailto:sihararidwansihara@gmail.com">Email Ridwan</a>
+              <a href="mailto:sihararidwansihara@gmail.com">Email Ridwan Sihara</a>
             </Button>
             <Button asChild variant="secondary">
               <a href="tel:+6282111182593">Call</a>
