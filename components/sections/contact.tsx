@@ -13,7 +13,10 @@ export function Contact() {
             <dd className="col-span-2">+62 821-1118-2593</dd>
             <dt className="col-span-1 text-muted-foreground">Email</dt>
             <dd className="col-span-2">
-              <a className="underline underline-offset-4" href="mailto:sihararidwansihara@gmail.com">
+              <a
+                className="underline underline-offset-4"
+                href="mailto:sihararidwansihara@gmail.com"
+              >
                 sihararidwansihara@gmail.com
               </a>
             </dd>
@@ -28,6 +31,9 @@ export function Contact() {
                 github.com/Sihara17
               </a>
             </dd>
+          </dl>
+
+          {/* ✅ tombol diletakkan di luar <dl> */}
           <div className="mt-4 flex gap-3">
             <Button asChild className="bg-primary text-primary-foreground">
               <a href="mailto:sihararidwansihara@gmail.com">Email Ridwan Sihara</a>
@@ -37,9 +43,12 @@ export function Contact() {
             </Button>
           </div>
         </div>
+
         <div className="rounded-lg border p-4">
           <h3 className="font-medium">Optional Contact Form</h3>
-          <p className="mt-2 text-sm text-muted-foreground">You can wire this to Firebase or EmailJS later.</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            You can wire this to Firebase or EmailJS later.
+          </p>
           <form
             className="mt-3 grid gap-3"
             onSubmit={(e) => {
@@ -56,6 +65,7 @@ export function Contact() {
                 required
               />
             </label>
+
             <label className="grid gap-1 text-sm">
               <span className="text-muted-foreground">Email</span>
               <input
@@ -66,6 +76,7 @@ export function Contact() {
                 required
               />
             </label>
+
             <label className="grid gap-1 text-sm">
               <span className="text-muted-foreground">Message</span>
               <textarea
@@ -75,6 +86,7 @@ export function Contact() {
                 required
               />
             </label>
+
             <Button type="submit" className="bg-accent text-accent-foreground">
               Send Message
             </Button>
