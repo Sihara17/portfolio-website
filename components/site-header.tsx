@@ -20,7 +20,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="#home" className="font-sans text-sm font-semibold tracking-wide">
-          <span className="text-primary">Ridwan</span> Sihara
+          <span className="text-primary">Ridwan Sihara</span>
           <span className="sr-only">Go to Home</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex" aria-label="Primary Navigation">
