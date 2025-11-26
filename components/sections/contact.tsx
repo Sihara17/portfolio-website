@@ -1,16 +1,36 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
 export function Contact() {
+  const [status, setStatus] = useState("")
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setLoading(true)
+    setStatus("")
+
+    setTimeout(() => {
+      setStatus("Your message was saved locally (demo mode).")
+      setLoading(false)
+      e.currentTarget.reset()
+    }, 800)
+  }
+
   return (
     <section id="contact" className="mx-auto max-w-6xl px-4 py-12 md:py-16">
       <h2 className="text-xl font-semibold md:text-2xl">Contact</h2>
+
       <div className="mt-4 grid gap-6 md:grid-cols-2">
+        
+        {/* LEFT CONTACT INFO */}
         <div className="rounded-lg border p-4">
           <dl className="grid grid-cols-3 gap-3 text-sm">
             <dt className="col-span-1 text-muted-foreground">Phone</dt>
             <dd className="col-span-2">+62 821-1118-2593</dd>
+
             <dt className="col-span-1 text-muted-foreground">Email</dt>
             <dd className="col-span-2">
               <a
@@ -20,6 +40,7 @@ export function Contact() {
                 sihararidwansihara@gmail.com
               </a>
             </dd>
+
             <dt className="col-span-1 text-muted-foreground">GitHub</dt>
             <dd className="col-span-2">
               <a
@@ -33,7 +54,6 @@ export function Contact() {
             </dd>
           </dl>
 
-          {/* ✅ tombol diletakkan di luar <dl> */}
           <div className="mt-4 flex gap-3">
             <Button asChild className="bg-primary text-primary-foreground">
               <a href="mailto:sihararidwansihara@gmail.com">Email Ridwan Sihara</a>
@@ -44,18 +64,14 @@ export function Contact() {
           </div>
         </div>
 
+        {/* RIGHT FORM */}
         <div className="rounded-lg border p-4">
           <h3 className="font-medium">Optional Contact Form</h3>
           <p className="mt-2 text-sm text-muted-foreground">
-            You can wire this to Firebase or EmailJS later.
+            Demo only — not connected to email server.
           </p>
-          <form
-            className="mt-3 grid gap-3"
-            onSubmit={(e) => {
-              e.preventDefault()
-              alert("Thanks! This demo form is not yet wired to a backend.")
-            }}
-          >
+
+          <form className="mt-3 grid gap-3" onSubmit={handleSubmit}>
             <label className="grid gap-1 text-sm">
               <span className="text-muted-foreground">Name</span>
               <input
@@ -87,9 +103,15 @@ export function Contact() {
               />
             </label>
 
-            <Button type="submit" className="bg-accent text-accent-foreground">
-              Send Message
+            <Button
+              type="submit"
+              className="bg-accent text-accent-foreground"
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Send Message"}
             </Button>
+
+            {status && <p className="text-sm mt-1">{status}</p>}
           </form>
         </div>
       </div>
